@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from passdataapp.views import dice
+from passdataapp.views import dice, dice2, dice3, show
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dice/', dice),
-    
+    path('dice2/', dice2),
+    path('dice3/', dice3),
+    path('show/', show),
 ]
