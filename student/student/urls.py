@@ -19,8 +19,8 @@ from studentapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('listone/', views.listone),
-    # path('listall/', views.listall),
+    path('listone/', views.listone),
+    path('listall/', views.listall),
     # path('', views.index),
     # path('index/', views.index)
 ]
