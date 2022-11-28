@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirent
+from django.shortcuts import render, redirect
+from student2app.models import student
 
 # Create your views here.
 def post(request):
@@ -17,10 +18,10 @@ def post1(request):
     cPhone = request.POST['cPhone']
     cAddr = request.POST['cAddr']
     # 新增一筆資料
-    unit = student2.objects.create(cName=cName, cSex=cSex,cBirthday=cBirthday, cEmail=cEmail,
+    unit = student.objects.create(cName=cName, cSex=cSex,cBirthday=cBirthday, cEmail=cEmail,
             cPhone=cPhone, cAddr=cAddr)
     unit.save() #寫入資料庫
-    return redirent('/index/')
+    return redirect('/index/')
   else:
     message = "請輸入資料(資料不做驗證)"
   return render(request, "post1.html", locals())
